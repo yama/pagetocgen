@@ -194,16 +194,10 @@ foreach($header_tags as $tags){
 		$current_tag_pointer = $h6;
 	}
 	$temp = $i + 1;
-//	$replace_var = $tag."<a name=\"". $named_anchors[$i]. "-". $temp ."\" id=\"". $named_anchors[$i]. "-". $temp."\"></a>".$named_anchors[$i]."</h".$tag_value.">";
-//	$replace_var = $tag."<a name=\"". ereg_replace(" ", "_", $named_anchors[$i]). "_". $temp ."\" id=\"". ereg_replace(" ", "_", $named_anchors[$i]). "_". $temp."\"></a>".$named_anchors[$i]."</h".$tag_value.">";
-// latest one //	$replace_var = $tag."<a name=\"". ereg_replace(" ", "_", strip_tags($named_anchors[$i])). "_". $temp ."\" id=\"". ereg_replace(" ", "_", strip_tags($named_anchors[$i])). "_". $temp."\"></a>".$named_anchors[$i]."</h".$tag_value.">";
 	$replace_var = $tag."<a name=\"". strip_special_chars(strip_tags($named_anchors[$i])). "_". $temp ."\" id=\"". strip_special_chars(strip_tags($named_anchors[$i])). "_". $temp."\"></a>".$named_anchors[$i]."</h".$tag_value.">";
 	$source = str_replace($tags, $replace_var, $source);
 	if($prev_tag_value < $tag_value){
 		$display_content = $display_content . "\n<". $toc_list_type .">";
-//		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".$named_anchors[$i]."-".$temp."\">". $named_anchors[$i] ."</a>";
-//		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".ereg_replace(" ", "_", $named_anchors[$i])."_".$temp."\">". $named_anchors[$i] ."</a>";
-// latest one //		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".ereg_replace(" ", "_", strip_tags($named_anchors[$i]))."_".$temp."\">". strip_tags($named_anchors[$i]) ."</a>";
 		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".strip_special_chars(strip_tags($named_anchors[$i]))."_".$temp."\">". 
 strip_tags($named_anchors[$i]) ."</a>";
 
@@ -282,9 +276,6 @@ strip_tags($named_anchors[$i]) ."</a>";
 		if($tag_value == 1){
 			$display_content = $display_content .array_shift($h1);
 		}
-//		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".$named_anchors[$i]."-".$temp."\">". $named_anchors[$i] ."</a>";
-//		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".ereg_replace(" ", "_", $named_anchors[$i])."_".$temp."\">". $named_anchors[$i] ."</a>";
-// latest one //		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".ereg_replace(" ", "_", strip_tags($named_anchors[$i]))."_".$temp."\">". strip_tags($named_anchors[$i]) ."</a>";
 		$display_content = $display_content . "\n<li><a href=\"".$_SERVER["REQUEST_URI"]."#".strip_special_chars(strip_tags($named_anchors[$i]))."_".$temp."\">". strip_tags($named_anchors[$i]) ."</a>";
 
 		if($tag_value == 6){
