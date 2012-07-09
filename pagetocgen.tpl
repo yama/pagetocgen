@@ -1,10 +1,17 @@
-/*
-Plugin Name: TOC Generator
-Plugin URI:
-Description: This plugin is used to automatically generate a table of contents from HTML headings on that page.
-Version: 0.9.2
-Author: Samit Vartak and Paul Bohman
+//<?php
+/**
+ * TOC Generator
+ *
+ * This plugin is used to automatically generate a table of contents from HTML headings on that page.
+ *
+ * @category 	plugin
+ * @version  	0.9.2
+ * @author   	Samit Vartak and Paul Bohman
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal	@events OnWebPagePrerender
+ */
 
+/*
 KNOWN BUGS: 
 - default value for $end_level doesn't work, you must specify it explicitly
 - the start configuration marker seems to be required, even though it's not supposed to be.
