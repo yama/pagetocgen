@@ -145,7 +145,7 @@ foreach($header_tags as $tags){
 	$tag = "";
 	$tag_value = 0;
 	$replace_var = "";
-	if (ereg("<h1", $header_tags[$i])){
+	if (strpos($header_tags[$i], '<h1')!==false){
 		//$tag = "<h1>";
 		preg_match_all($tag_pattern, $header_tags[$i], $tag1, PREG_SET_ORDER);
 		$tag2 = $tag1[0];
@@ -153,7 +153,7 @@ foreach($header_tags as $tags){
 		$tag_value = 1;
 		$current_tag_pointer = $h1;
 	}
-	elseif (ereg("<h2", $header_tags[$i])) {
+	elseif (strpos($header_tags[$i], '<h2')!==false) {
 		//$tag = "<h2>";
 		preg_match_all($tag_pattern, $header_tags[$i], $tag1, PREG_SET_ORDER);
 		$tag2 = $tag1[0];
@@ -161,7 +161,7 @@ foreach($header_tags as $tags){
 		$tag_value = 2;
 		$current_tag_pointer = $h2;
 	}
-	elseif (ereg("<h3", $header_tags[$i])) {
+	elseif (strpos($header_tags[$i], '<h3')!==false) {
 		//$tag = "<h3>";
 		preg_match_all($tag_pattern, $header_tags[$i], $tag1, PREG_SET_ORDER);
 		$tag2 = $tag1[0];
@@ -169,7 +169,7 @@ foreach($header_tags as $tags){
 		$tag_value = 3;
 		$current_tag_pointer = $h3;
 	}
-	elseif (ereg("<h4", $header_tags[$i])) {
+	elseif (strpos($header_tags[$i], '<h4')!==false) {
 		//$tag = "<h4>";
 		preg_match_all($tag_pattern, $header_tags[$i], $tag1, PREG_SET_ORDER);
 		$tag2 = $tag1[0];
@@ -177,7 +177,7 @@ foreach($header_tags as $tags){
 		$tag_value = 4;
 		$current_tag_pointer = $h4;
 	}
-	elseif (ereg("<h5", $header_tags[$i])){
+	elseif (strpos($header_tags[$i], '<h5')!==false) {
 		//$tag = "<h5>";
 		preg_match_all($tag_pattern, $header_tags[$i], $tag1, PREG_SET_ORDER);
 		$tag2 = $tag1[0];
@@ -185,7 +185,7 @@ foreach($header_tags as $tags){
 		$tag_value = 5;
 		$current_tag_pointer = $h5;
 	}
-	elseif (ereg("<h6", $header_tags[$i])){
+	elseif (strpos($header_tags[$i], '<h6')!==false) {
 		//$tag = "<h6>";
 		preg_match_all($tag_pattern, $header_tags[$i], $tag1, PREG_SET_ORDER);
 		$tag2 = $tag1[0];
