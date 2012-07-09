@@ -5,7 +5,7 @@
  * This plugin is used to automatically generate a table of contents from HTML headings on that page.
  *
  * @category 	plugin
- * @version  	0.9.2
+ * @version  	0.9.3
  * @author   	Samit Vartak and Paul Bohman
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  * @internal	@events OnWebPagePrerender
